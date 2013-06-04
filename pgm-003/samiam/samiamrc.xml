@@ -1,8 +1,8 @@
 <SamiamPreferences>
-	<DefaultPath>/home/isaiah/Codes/coursera/pgm-003/PGM-Programming_Assignment_1</DefaultPath>
+	<DefaultPath>/home/isaiah/Codes/coursera/pgm-003/PA2/PGM_Programming_Assignment_2</DefaultPath>
 	<FileExtension>.net</FileExtension>
 	<SecondsPerRCCall>2.018421361862025E-6</SecondsPerRCCall>
-	<RecentDocuments>/home/isaiah/Codes/coursera/pgm-003/PGM-Programming_Assignment_1/Credit_net.net;</RecentDocuments>
+	<RecentDocuments>/home/isaiah/Codes/coursera/pgm-003/PGM-Programming_Assignment_1/Credit_net.net;/home/isaiah/Codes/coursera/pgm-003/PA2/PGM_Programming_Assignment_2/spinalMuscularAtrophyBayesNet.net;/home/isaiah/Codes/coursera/pgm-003/PA2/PGM_Programming_Assignment_2/cysticFibrosisBayesNetGeneCopy.net;/home/isaiah/Codes/coursera/pgm-003/PA2/PGM_Programming_Assignment_2/cysticFibrosisBayesNet.net;</RecentDocuments>
 	<Algorithm>huginenginegenerator3061656038650325130L</Algorithm>
 	<Property key="visibletoolbar">true</Property>
 	<Property key="visibleinstantiationclipboardtoolbar">true</Property>
@@ -11,7 +11,7 @@
 	<Property key="constraintsinstantiationclipboardtoolbar">East</Property>
 	<PreferenceGroup name="Inference">
 		<pref class="edu.ucla.belief.ui.preference.IntegerPreference" key="inferenceMinFillRepetitions" value="7" name="Min fill, best of N repetitions" />
-		<pref class="edu.ucla.belief.ui.preference.IntegerPreference" key="inferenceMinFillSeed" value="1821724726" name="Min fill, new random seed (not saved)" />
+		<pref class="edu.ucla.belief.ui.preference.IntegerPreference" key="inferenceMinFillSeed" value="1374344000" name="Min fill, new random seed (not saved)" />
 		<pref class="edu.ucla.belief.ui.preference.BooleanPreference" key="inferenceMAPExplorerFullScreenWidth" value="true" name="MAP Solution Explorer, maximize width" />
 		<pref class="edu.ucla.belief.ui.preference.BooleanPreference" key="askBeforeCPTCopy" value="true" name="Ask before modifying cpt (cpt copy tool)" />
 		<pref class="edu.ucla.belief.ui.preference.EnumPreference$Caste" key="inferenceCaste" value="retard" name="User level (cpt copy tool)" />
