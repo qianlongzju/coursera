@@ -9,7 +9,7 @@
  % These scripts depend on PA4 files for exact inference. Either
  % copy them to current dir, or add:
  % addpath '/path/to/your/PA4/Files'
-
+addpath '../../PA4/PGM-Programming_Assignment_4';
  % If you notice that your MCMC wanders in circles, it may be
  % because rand function included with the assignment is still buggy
  % in your course run. In this case rename rand.m and randi.m
@@ -28,7 +28,7 @@ on_diagonal = 0.2;
 off_diagonal = 1;
 
 % Directory to save the plots into, change to your output path
-plotsdir = "/home/ll/plots_test";
+plotsdir = "./plots_test";
 
 start = time;
 

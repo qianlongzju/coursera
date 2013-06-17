@@ -1,3 +1,4 @@
+addpath '../../PA4/PGM-Programming_Assignment_4';
 [G, F] = ConstructToyNetwork(1, .1);
 randi('seed',1);
 for i = 1:2
