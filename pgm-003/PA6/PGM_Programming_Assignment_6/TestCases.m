@@ -138,6 +138,7 @@ euf = CalculateExpectedUtilityFactor(I3);
 % 2	2	0.300000
 
 [meu optdr] = OptimizeMEU(I3)
+PrintFactor(optdr);
 [meu optdr] = OptimizeWithJointUtility(I3)
 [meu optdr] = OptimizeLinearExpectations(I3)
 
