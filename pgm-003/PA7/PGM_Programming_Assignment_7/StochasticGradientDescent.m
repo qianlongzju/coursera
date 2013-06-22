@@ -27,16 +27,21 @@
 
 function thetaOpt = StochasticGradientDescent (gradFunc, theta0, maxIter)
 
-    % The grader will accept all answers that are near enough
-    % to the optimal value, so don't worry about being off by one 
-    % iteration etc.
-    
-    thetaOpt = zeros(size(theta0));
+% The grader will accept all answers that are near enough
+% to the optimal value, so don't worry about being off by one 
+% iteration etc.
 
-    %%%%%%%%%%%%%%
-    %%% Student code
+thetaOpt = zeros(size(theta0));
+thetaOpt = theta0;
 
-    %%%%%%%%%%%
+%%%%%%%%%%%%%%
+%%% Student code
+for i=1:maxIter,
+    [cost, grad] = gradFunc(thetaOpt, i);
+    thetaOpt = thetaOpt - (0.1/(1+sqrt(i)))*grad;
+end
+
+%%%%%%%%%%%
 
 end
 

@@ -17,14 +17,17 @@
 
 function allAcc = LRSearchLambdaSGD(Xtrain, Ytrain, Xvalidation, Yvalidation, lambdas)
 
-  % You may use the functions we have provided such as LRTrainSGD, LRPredict, and LRAccuracy.
-  
-  allAcc = zeros(size(lambdas));
-  
-  %%%%%%%%%%%%%%
-  %%% Student code
+% You may use the functions we have provided such as LRTrainSGD, LRPredict, and LRAccuracy.
 
+allAcc = zeros(size(lambdas));
 
-  %%%%%%%%%%%  
+%%%%%%%%%%%%%%
+%%% Student code
+for i=1:length(lambdas),
+    theta = LRTrainSGD(Xtrain, Ytrain, lambdas(i));
+    pred = LRPredict(Xvalidation, theta);
+    allAcc(i) = LRAccuracy(Yvalidation, pred);
+end
+%%%%%%%%%%%  
  
 end 

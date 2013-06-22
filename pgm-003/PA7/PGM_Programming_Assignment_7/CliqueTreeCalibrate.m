@@ -104,7 +104,11 @@ function [P, logZ] = CliqueTreeCalibrate(P, isMax)
     % logZ, the log of the partition function.
     if (doLogZ)
         %%% YOUR CODE HERE:
-        logZ = 0; % remove this
+        [i, j] = find(P.edges);
+        messg1 = unnormalizedMessages(i(1), j(1));
+        messg2 = unnormalizedMessages(j(1), i(1));
+        tmp = FactorProduct(messg1, messg2);
+        logZ = log(sum(tmp.val));
     else
         logZ = 0;
     end

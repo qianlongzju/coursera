@@ -45,7 +45,7 @@ function [nll, grad] = InstanceNegLogLikelihood(X, y, theta, modelParams)
     % For the purposes of this assignment, though, you don't
     % have to understand how this code works. (It's complicated.)
     
-    featureSet = GenerateAllFeatures(X, modelParams);
+    featureSet = GenerateAllFeatures(X, modelParams)
 
     % Use the featureSet to calculate nll and grad.
     % This is the main part of the assignment, and it is very tricky - be careful!
@@ -60,6 +60,11 @@ function [nll, grad] = InstanceNegLogLikelihood(X, y, theta, modelParams)
     grad = zeros(size(theta));
     %%%
     % Your code here:
-    
+    uncalibratedTree = GetUncalibratedTree(featureSet);
+    [P, logZ] = CliqueTreeCalibrate(uncalibratedTree, 0);
+    regularizationCost = modelParams.lambda / 2 * sum(theta .^ 2);
+    regularizationGradient = modelParams.lambda * theta;
+    nll = logZ - sum(weightedFeatureCounts) + regularizationCost;
+    grad = modelFeatureCounts - featureCounts + regularizationGradient
 
 end
