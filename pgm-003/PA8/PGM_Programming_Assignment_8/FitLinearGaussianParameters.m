@@ -27,7 +27,19 @@ sigma = 1;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % YOUR CODE HERE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+A = zeros(N+1, N+1);
+for i=1:N,
+    A(1, i) = mean(U(:, i));
+end 
+A(1, N+1) = 1;
+for i=1:N,
+    A(i+1, N+1) = mean(U(:, i));
+end 
+for i=1:N,
+    for j=1:N,
+        A(i+1, j) = mean(U(:, i) .* U(:, j));
+    end 
+end
 
 % B = [ E[X]; E[X*U(1)]; ... ; E[X*U(n)] ]
 
@@ -35,13 +47,25 @@ sigma = 1;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % YOUR CODE HERE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+B = zeros(1, N+1);
+B(1) = mean(X);
+for i=1:N,
+    B(i+1) = mean(X .* U(:, i));
+end
 % solve A*Beta = B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % YOUR CODE HERE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Beta = pinv(A) * B';
 
 % then compute sigma according to eq. (11) in PA description
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % YOUR CODE HERE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+sigma = mean(X.*X) -mean(X)*mean(X);
+for i=1:N,
+    for j=1:N,
+        sigma -= Beta(i)*Beta(j)*(mean(U(:,i).*U(:,j))-mean(U(:,i))*mean(U(:,j)));
+    end
+end
+sigma = sqrt(sigma);
