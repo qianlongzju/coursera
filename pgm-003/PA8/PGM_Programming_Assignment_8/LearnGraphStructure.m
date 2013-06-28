@@ -20,6 +20,29 @@ W = zeros(10,10);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % YOUR CODE HERE        
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+for i=1:10,
+    for j=1:10,
+        if j < i,
+            x = dataset(:, i, :);
+            x = squeeze(x);
+            y = dataset(:, j, :);
+            y = squeeze(y);
+            cov_x_x = cov(x, x);
+            cov_y_y = cov(y, y);
+            cov_x_y = cov(x, y);
+            cov_y_x = cov(y, x);
+            cov_all = [cov_x_x cov_x_y; cov_y_x cov_y_y];
+            W(i, j) = 0.5*log((det(cov_x_x) * det(cov_y_y)) / det(cov_all));
+        end
+    end
+end
+for i=1:10,
+    for j=1:10,
+        if j > i,
+            W(i, j) = W(j, i);
+        end
+    end
+end
 
 % Compute maximum spanning tree
 A = MaxSpanningTree(W);
