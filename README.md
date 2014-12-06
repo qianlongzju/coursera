@@ -1,4 +1,4 @@
 coursera
 ========
 
-solutions to programming assigments of soursera courses
+solutions to programming assigments of coursera courses
